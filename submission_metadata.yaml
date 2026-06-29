@@ -1,0 +1,82 @@
+# Redrob Hackathon — Submission Metadata Template
+#
+# The fields here should match what you submit via the portal at upload time.
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "Prompts Pirates"
+
+primary_contact:
+  name: "CHAITANYA KHANKE"
+  email: "chaitanyakhanke6@gmail.com"
+  phone: "+91-9322167019"
+
+team_members:
+  - name: "CHAITANYA KHANKE"
+    email: "chaitanyakhanke6@gmail.com"
+    role: "Team Lead / ML Architect"
+  - name: "Swapnil Kamthe"
+    email: "yamraj69146@gmail.com"
+    role: "Software Engineer"
+  - name: "Pallavi Sonawane"
+    email: "pallavisonawane061996@gmail.com"
+    role: "ML Engineer"
+  - name: "Afreena S"
+    email: "afreenasiraj24@gmail.com"
+    role: "Data Engineer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/CHAITANYA-KHANKE/prompts-pirates-ranker"
+sandbox_link: "https://huggingface.co/spaces/CHAITANYA-KHANKE/redrob-ranker"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./prompts_pirates.csv"
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Local Windows Machine"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.15.0a6"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+ai_tools_used:
+  - "Gemini"
+  - "ChatGPT"
+
+ai_usage_summary: |
+  Gemini and ChatGPT were used as development assistants for architectural
+  brainstorming, implementation guidance, debugging, code review, and
+  documentation support. All core design decisions, feature engineering,
+  ranking logic, experimentation, integration, testing, and final validation
+  were performed through iterative human development. AI tools assisted the
+  engineering workflow but did not autonomously produce the final solution.
+
+# ============================================================================
+# Approach summary (optional but recommended)
+# ============================================================================
+methodology_summary: |
+  Our ranker is a low-latency cascading pipeline utilizing deterministic filters 
+  (hard-excluding service-only workers and 54 honeypot anomalies) followed by 
+  a TF-IDF text matcher and multi-factor behavioral activity multipliers.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
+

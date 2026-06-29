@@ -1,0 +1,9 @@
+# Ignore everything by default
+*
+
+# Whitelist only the necessary submission and execution files
+!.gitignore
+!rank.py
+!submission_metadata.yaml
+!prompts_pirates.csv
+!README.md
