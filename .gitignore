@@ -6,4 +6,7 @@
 !rank.py
 !submission_metadata.yaml
 !prompts_pirates.csv
+!prompts_pirates.xlsx
 !README.md
+!validate_submission.py
+!candidate_schema.json
