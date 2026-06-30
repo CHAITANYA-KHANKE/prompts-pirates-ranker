@@ -15,14 +15,14 @@ primary_contact:
 team_members:
   - name: "CHAITANYA KHANKE"
     email: "chaitanyakhanke6@gmail.com"
-    role: " Software Engineer , Dats Engineer"
+    role: " Software Engineer , Data Engineer"
   - name: "Swapnil Kamthe"
     email: "yamraj69146@gmail.com"
     role: "Data Engineer"
   - name: "Pallavi Sonawane"
     email: "pallavisonawane061996@gmail.com"
     role: "ML Engineer"
-  - name: "Afreena S"
+  - name: "Afreena Siraj"
     email: "afreenasiraj24@gmail.com"
     role: "Data Engineer"
 
