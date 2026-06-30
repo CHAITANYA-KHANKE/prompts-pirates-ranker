@@ -373,19 +373,30 @@ def main():
     top_100 = candidates[:100]
     
     print(f"Writing top 100 to {args.out}...")
+    
+    # Normalize scores to [0.20, 0.99] range to match sample submission format
+    max_s = top_100[0][0] if top_100 else 1.0
+    min_s = top_100[-1][0] if top_100 else 0.0
+    
     with open(args.out, 'w', encoding='utf-8', newline='') as csvfile:
         # Standard header
         csvfile.write("candidate_id,rank,score,reasoning\n")
         
         for i, (score, cid, details) in enumerate(top_100):
             rank = i + 1
+            
+            if max_s != min_s:
+                norm_score = 0.20 + 0.79 * (score - min_s) / (max_s - min_s)
+            else:
+                norm_score = 0.99
+                
             reasoning = generate_reasoning(cid, score, details)
             
             # Escape double quotes in reasoning string for valid CSV formatting
             reasoning_escaped = reasoning.replace('"', '""')
             
             # Format row
-            csvfile.write(f'{cid},{rank},{score:.4f},"{reasoning_escaped}"\n')
+            csvfile.write(f'{cid},{rank},{norm_score:.4f},"{reasoning_escaped}"\n')
             
     print("Ranking complete. CSV file successfully written.")
 
